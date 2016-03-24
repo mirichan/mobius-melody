@@ -1,0 +1,35 @@
+{
+  "name": "mobius-melody",
+  "version": "0.0.1",
+  "description": "An infinite jukebox clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarl3tt/mobius-melody.git"
+  },
+  "author": "Michael Mroz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/scarl3tt/mobius-melody/issues"
+  },
+  "homepage": "https://github.com/scarl3tt/mobius-melody#readme",
+  "dependencies": {
+    "install": "^0.6.1",
+    "jquery": "^2.2.2",
+    "jquery-ui": "^1.10.5",
+    "raphael": "^2.1.4",
+    "react": "^0.14.7",
+    "rnpm": "^1.5.2",
+    "underscore": "^1.8.3",
+    "watch": "^0.17.1",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.3"
+  }
+}

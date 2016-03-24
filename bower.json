@@ -1,0 +1,27 @@
+{
+  "name": "mobius-melody",
+  "description": "An infinite jukebox clone",
+  "main": "index.js",
+  "authors": [
+    "Michael Mroz"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/scarl3tt/mobius-melody",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "jquery-ui": "^1.11.4",
+    "raphael": "^2.1.4",
+    "underscore": "^1.8.3",
+    "Watch.JS": "watch#*"
+  }
+}
