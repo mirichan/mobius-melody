@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="/components/jquery/dist/jquery.js"></script>
+<script src="/components/jquery-ui/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/components/jquery-ui/themes/ui-lightness/jquery-ui.min.css" type="text/css" media="screen">
+
+<script type="text/javascript" src="/components/Watch.JS/src/watch.min.js"></script> 
+<link rel="stylesheet" href="styles.css" type="text/css" media="screen">
+<script type="text/javascript" src="/js/lib/jremix.js"></script> 
+
+<script src="/components/underscore/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/components/raphael/raphael-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="poplist.js" type="text/javascript" charset="utf-8"></script>
+<script src="topsongs.js" type="text/javascript" charset="utf-8"></script>
+<title> The Infinite Jukebox </title>
+</head>
+
+<body>
+    <div id='title'>  <b>The Infinite Jukebox</b> </div>
+    <div id='main'>
+        <i> For when your favorite song just isn't long enough</i>
+        <div id='select-track'>
+            <button id='load'> Upload your own MP3 </button>
+        </div>
+
+        <div id='info'> </div> 
+        <div id='error'> </div> 
+        <div id='song-div'> 
+            <div id='search-form'> 
+                Search for a track <input id="search-text" type="text"> <button id="search"> Search </button>
+            </div>
+            <div id='sel-text'> Or select a 
+            <span class='sel-list' id='recent-list'>recent</span>,
+            <span class='sel-list' id='popular-list'>most played</span> or
+            <span class='sel-list' id='upload-list'>most uploaded</span>  
+             track:</div>
+            <ul id="song-list"> </ul>
+        </div>
+    </div>
+
+
+    <div id='running'>
+        <div id='details'>
+            <span id='song-title'> </span>
+            <span id='button-panel'>
+                <button class='cbut' id='new'> New song</button> 
+                <button class='cbut' id='tune'> Tune </button> 
+                <button class='cbut' id='go'> Play</button> 
+            </span>
+        </div>
+
+        <div id='tiles'></div> 
+    
+        <div id='stats'>
+            <span id='sbeats'> Total Beats: <span id='beats'> 0 </span></span>
+            <!--<span id='sbeats'> PC: <span id='playcount'> 0 </span></span> -->
+            <span id='stime'> Listen Time: <span id='time'> 00:00:00 </span></span>
+        </div>
+    </div>
+
+    <div id='controls'>
+        <div>
+            <div id='control-instructions'> 
+                You can tune control the frequency and quality of the branching. See the FAQ for more details.
+            </div>
+            <div id="threshold-div">
+                <div id='sthreshold'> Branch Similarity Threshold: <span id='threshold'> 50 </span> </div>
+
+                <div class='slider' id="threshold-slider"></div>  
+                <div id='slider-labels'> 
+                    <span class='left-label'> Higher<br> Quality </span> 
+                    <span class='right-label'> More <br>Branches </span>  
+                </div>
+            </div>
+            <br clear="all">
+            <div id="probability-div">
+                <div id='sprobability'> Branch Probability Range: 
+                    <span id='min-prob'></span>% to
+                    <span id='max-prob'></span>% 
+                </div>
+                <div class='slider' id="probability-slider"></div>  
+                <div id='slider-labels'> 
+                    <span class='left-label'> Low </span> 
+                    <span class='right-label'> High </span>  
+                </div>
+            </div>
+            <br clear="all">
+
+            <div id="probability-div">
+                <div id='sprobability'> Branch Probability Ramp-up Speed: 
+                    <span id='ramp-speed'>20</span>%
+                </div>
+                <div class='slider' id="probability-ramp-slider"></div>  
+                <div id='slider-labels'> 
+                    <span class='left-label'> Slow </span> 
+                    <span class='right-label'> Fast </span>  
+                </div>
+            </div>
+            <br clear="all">
+            <div class='l-cb' id='l-last-branch'> Loop extension optimization: <input type='checkbox' id='last-branch' checked> </div>
+            <div class='l-cb' id='l-reverse-branch'> Allow only reverse branches : <input type='checkbox' id='reverse-branch' > </div>
+            <div class='l-cb' id='l-long-branch'> Allow only long branches : <input type='checkbox' id='long-branch' > </div>
+            <div class='l-cb' id='l-sequential-branch'> Remove sequential branches: <input type='checkbox' id='sequential-branch' > </div>
+
+
+            <hr>
+            <div id='tune-info'>
+                <div id='l-branch-chance'> Branch chance (%): <span class='ti-val' id='branch-chance'>0</span></div> 
+                <div id='l-branch-threshold'> Last threshold: <span class='ti-val' id='last-threshold'>0</span></div> 
+                <br>
+                <div id='l-beat-count'> Total beats: <span class='ti-val' id='total-beats'></span></div> 
+                <div id='l-branch-count'> Total branches: <span class='ti-val' id='branch-count'></span></div> 
+                <div id='l-loop-length-beats'> Longest loop (beats):  <span class='ti-val' id='loop-length-beats'></span> </div>
+                <div id='l-loop-length-percent'> Longest loop (%):  <span class='ti-val' id='loop-length-percent'></span> </div>
+                <br>
+                <div id='l-deleted-branches'> Deleted branches: <span class='ti-val' id='deleted-branches'>0</span></div>  
+            </div>
+            <button class='cbut' id='reset-edges'> Reset </button> 
+        </div>
+    </div>
+
+<script src="mobius.js" type="text/javascript"></script>
+
+</body>
+</html>
